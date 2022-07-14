@@ -13,8 +13,8 @@ jobs:
         with:
           files: dist
 
-      - name: check files
-        run: ls
+      - name: move files
+        run: mv dist/* . && ls
 
       # - name: Commit result back to repo
       #   continue-on-error: true
