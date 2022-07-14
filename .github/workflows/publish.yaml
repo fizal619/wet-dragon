@@ -1,0 +1,26 @@
+name: publish
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  prediction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: clean up files
+        run: rm -rfv !("dist")
+
+      - name: check files
+        run: ls
+
+      # - name: Commit result back to repo
+      #   continue-on-error: true
+      #   run: |
+      #     git config --global user.name 'The Octocat'
+      #     git config --global user.email 'octocat@github.com'
+      #     git add .
+      #     git commit -m "Updated Results And Predictions"
+      #     git push
