@@ -8,10 +8,10 @@ jobs:
   prediction:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: clean up files
-        run: rm -rfv !("dist")
+      - name: Checkout files
+        uses: Bhacaz/checkout-files@v2
+        with:
+          files: dist
 
       - name: check files
         run: ls
