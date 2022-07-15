@@ -13,7 +13,7 @@ jobs:
       - name: Checkout files
         uses: Bhacaz/checkout-files@v2
         with:
-          files: dist
+          files: dist sprites
 
       - name: move files
         run: mv dist/* . && ls
@@ -24,11 +24,11 @@ jobs:
       - name: Commit result back to repo
         continue-on-error: true
         run: |
-          git init 
+          git init
           git remote add origin https://github.com/plantainchip/wet-dragon.git
           git config --global user.name 'The Octocat'
           git config --global user.email 'octocat@github.com'
-          git checkout -b pages 
+          git checkout -b pages
           git add .
           git commit -m "Updated Results And Predictions"
           git push https://plantainchip:${{ secrets.GITHUB_TOKEN }}@github.com/plantainchip/wet-dragon.git -f
