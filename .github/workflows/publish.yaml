@@ -26,4 +26,10 @@ jobs:
           git checkout -b pages 
           git add .
           git commit -m "Updated Results And Predictions"
-          git push origin pages -f
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: pages
+          force_with_lease: true
