@@ -16,11 +16,12 @@ jobs:
       - name: move files
         run: mv dist/* . && ls
 
-      # - name: Commit result back to repo
-      #   continue-on-error: true
-      #   run: |
-      #     git config --global user.name 'The Octocat'
-      #     git config --global user.email 'octocat@github.com'
-      #     git add .
-      #     git commit -m "Updated Results And Predictions"
-      #     git push
+      - name: Commit result back to repo
+        continue-on-error: true
+        run: |
+          git config --global user.name 'The Octocat'
+          git config --global user.email 'octocat@github.com'
+          git checkout pages 
+          git add .
+          git commit -m "Updated Results And Predictions"
+          git push origin pages -f
