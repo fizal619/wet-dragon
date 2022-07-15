@@ -18,6 +18,9 @@ jobs:
       - name: move files
         run: mv dist/* . && ls
 
+      - name: edit html
+        run: sed -i 's/dist/wet-dragon/g' index.html
+
       - name: Commit result back to repo
         continue-on-error: true
         run: |
