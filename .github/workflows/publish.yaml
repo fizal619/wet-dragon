@@ -26,6 +26,7 @@ jobs:
           git checkout -b pages 
           git add .
           git commit -m "Updated Results And Predictions"
+          git push --set-upstream origin pages
           
       - name: Push changes
         uses: ad-m/github-push-action@master
