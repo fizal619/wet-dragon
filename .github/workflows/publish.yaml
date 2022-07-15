@@ -19,6 +19,8 @@ jobs:
       - name: Commit result back to repo
         continue-on-error: true
         run: |
+          git init 
+          git remote add origin https://github.com/plantainchip/wet-dragon.git
           git config --global user.name 'The Octocat'
           git config --global user.email 'octocat@github.com'
           git checkout pages 
