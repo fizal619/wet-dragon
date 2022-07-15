@@ -5,7 +5,7 @@ on:
 
 
 jobs:
-  prediction:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout files
@@ -26,5 +26,4 @@ jobs:
           git checkout -b pages 
           git add .
           git commit -m "Updated Results And Predictions"
-          git push https://plantainchip:${{ secrets.GITHUB_TOKEN }}@github.com/plantainchip/wet-dragon.git
-          
+          git push https://plantainchip:${{ secrets.GITHUB_TOKEN }}@github.com/plantainchip/wet-dragon.git -f
